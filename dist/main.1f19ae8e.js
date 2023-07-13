@@ -118,16 +118,37 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-'use strict';
+// Get the progress bar element and the update button
+var progressBar = document.getElementById("progress-bar");
+var updateButton = document.getElementById("update-button");
 
-function counter() {
-  var seconds = 0;
-  setInterval(function () {
-    seconds += 1;
-    document.getElementById('app').innerHTML = "<p>Your pet had been alive for ".concat(seconds, " seconds.</p>");
-  }, 1000);
+// Update the progress bar with a new progress value
+function updateProgressBar(progress) {
+  // Create a new element to represent the progress bar fill
+  progressBar.innerHTML = "<div id='progress-bar-fill'></div>";
+
+  // Get the progress bar fill element from the HTML
+  var progressBarFill = document.getElementById("progress-bar-fill");
+
+  // Set the width of the progress bar fill based on the progress value
+  progressBarFill.style.width = "".concat(progress, "%");
 }
-counter();
+
+// Update the progress bar when the button is clicked
+updateButton.addEventListener("click", function () {
+  var progress = 0; // Set the initial progress value to 0
+
+  // Update the progress bar every 10 milliseconds until it reaches 100%
+  var intervalId = setInterval(function () {
+    progress += 1; // Increment the progress value
+    updateProgressBar(progress); // Update the progress bar with the new progress value
+
+    // Stop the interval when the progress reaches 100%
+    if (progress === 100) {
+      clearInterval(intervalId);
+    }
+  }, 100);
+});
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

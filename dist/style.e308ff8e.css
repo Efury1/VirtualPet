@@ -222,15 +222,30 @@ section {
   border-radius: 0 10px 10px 10px;
 }
 
+#progress-bar {
+  width: 30%;
+  height: 10px;
+  background-color: #ff0c7d;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#progress-bar-fill {
+  height: 10px;
+  background-color: #ffffff;
+  border-radius: 1px;
+}
+
 button {
-  width: 100px;
+  width: 65px;
+  height: 65px;
   margin-right: 10px;
   text-align: center;
   display: inline-block;
   font-size:15px;
   background-color: #c8759e;
   border-color: #610747;
-  border-radius: 10px;
+  border-radius: 50%;
 }
 button:hover {
   opacity: 0.7;
@@ -299,10 +314,6 @@ fieldset {
 
 legend {
   padding: 0;
-}
-
-progress {
-  vertical-align: baseline;
 }
 
 [type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
