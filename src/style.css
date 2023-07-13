@@ -17,7 +17,20 @@ html, * {
 }
 
 body {
-  margin: 0;
+  background:#f5b7e3;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  background-color: #ee8cef;
 }
 
 .dashboard div {
@@ -131,6 +144,28 @@ body {
   bottom: 110px;
   left:68px;
 }
+.whiskers {
+  width: 50%;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: 0px -1px 0px 0px #000;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  position: relative;
+  bottom: 115px;
+  left:90px;
+}
+.whiskers-2 {
+  width: 50%;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: 0px -1px 0px 0px #000;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  position: relative;
+  bottom: 125px;
+  right:35px;
+}
 .l1, .l2 {
   background-color: #751459;;
   height: 8px;
@@ -147,6 +182,8 @@ body {
   bottom: 10px;
   left: 3px;
 }
+
+
 
 button {
   width: 100px;
@@ -203,29 +240,17 @@ sup {
   top: -0.5em;
 }
 
-button, input, optgroup, select, textarea {
+ input, optgroup, select, textarea {
   font-family: inherit; 
   font-size: 100%; 
   line-height: 1.15; 
   margin: 0; 
 }
 
-button, select { 
+select { 
   text-transform: none;
 }
 
-button, [type="button"], [type="reset"], [type="submit"] {
-  -webkit-appearance: button;
-}
-
-button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
 
 fieldset {
   padding: 0.35em 0.75em 0.625em;
@@ -252,10 +277,6 @@ progress {
   -webkit-appearance: none;
 }
 
-::-webkit-file-upload-button {
-  -webkit-appearance: button; 
-  font: inherit; 
-}
 
 [hidden] {
   display: none;
