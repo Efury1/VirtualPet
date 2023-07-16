@@ -121,6 +121,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 // Get the progress bar element and the update button
 var progressBar = document.getElementById("progress-bar");
 var updateButton = document.getElementById("update-button");
+var progress = 0; // Set the initial progress value to 0
 
 // Update the progress bar with a new progress value
 function updateProgressBar(progress) {
@@ -136,16 +137,15 @@ function updateProgressBar(progress) {
 
 // Update the progress bar when the button is clicked
 updateButton.addEventListener("click", function () {
-  var progress = 0; // Set the initial progress value to 0
-
   // Update the progress bar every 10 milliseconds until it reaches 100%
   var intervalId = setInterval(function () {
-    progress += 1; // Increment the progress value
-    updateProgressBar(progress); // Update the progress bar with the new progress value
-
     // Stop the interval when the progress reaches 100%
     if (progress === 100) {
       clearInterval(intervalId);
+    }
+    if (progress < 100) {
+      progress = progress + 10;
+      updateProgressBar(progress); // Update the progress bar with the new progress value
     }
   }, 100);
 });
@@ -174,7 +174,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54615" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58685" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

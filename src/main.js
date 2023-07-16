@@ -1,7 +1,9 @@
 
 // Get the progress bar element and the update button
 const progressBar = document.getElementById("progress-bar");
- const updateButton = document.getElementById("update-button");
+const updateButton = document.getElementById("update-button");
+
+let progress = 0; // Set the initial progress value to 0
 
 // Update the progress bar with a new progress value
 function updateProgressBar(progress) {
@@ -17,16 +19,17 @@ function updateProgressBar(progress) {
 
 // Update the progress bar when the button is clicked
 updateButton.addEventListener("click", function () {
-    let progress = 0; // Set the initial progress value to 0
+
 
     // Update the progress bar every 10 milliseconds until it reaches 100%
     const intervalId = setInterval(function () {
-        progress += 1; // Increment the progress value
-        updateProgressBar(progress); // Update the progress bar with the new progress value
-
         // Stop the interval when the progress reaches 100%
         if (progress === 100) {
             clearInterval(intervalId); 
+        }
+        if (progress < 100) {
+            progress = progress + 10;
+            updateProgressBar(progress); // Update the progress bar with the new progress value
         }
     }, 100);
 });
