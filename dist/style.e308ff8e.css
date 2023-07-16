@@ -233,7 +233,6 @@ section {
 #progress-bar-fill {
   height: 10px;
   background-color: #ffffff;
-  border-radius: 1px;
 }
 
 button {
