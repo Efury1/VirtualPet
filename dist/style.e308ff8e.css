@@ -222,7 +222,7 @@ section {
   border-radius: 0 10px 10px 10px;
 }
 
-#progress-bar {
+#progress-happiness-bar {
   width: 30%;
   height: 10px;
   background-color: #ff0c7d;
@@ -230,7 +230,20 @@ section {
   overflow: hidden;
 }
 
-#progress-bar-fill {
+#progress-food-bar {
+  width: 30%;
+  height: 10px;
+  background-color: #ff0c7d;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#progress-happiness-bar-fill {
+  height: 10px;
+  background-color: #ffffff;
+}
+
+#progress-food-bar-fill {
   height: 10px;
   background-color: #ffffff;
 }
